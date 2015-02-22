@@ -16,5 +16,5 @@
 #### A shell script that reboots the Raspberry Pi if the wireless connection goes down.
 
 # Additional Info
-#### You can purchase a HeaterMeter Kit from the [HeaterMeter Store](http://store.heatermeter.com/)
+#### You can purchase a HeaterMeter Kit from the [HeaterMeter Store](http://store.heatermeter.com/collections/all)
 #### For additional questions and/or support, vist the [HeaterMeter Forum](http://tvwbb.com/forumdisplay.php?85-LinkMeter-v2-Homebrew-BBQ-Controller)
