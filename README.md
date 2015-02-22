@@ -3,6 +3,9 @@
 ## tc\_with\_servo
 #### The main config I use when using the [HeaterMeter](http://heatermeter.com) on my [Kamado Joe](http://www.kamadojoe.com/)
 
+## tc\_with\_ssr
+#### Alternate config settings when using a Solid State Relay (SSR)
+
 ## user.css
 #### My personal customizations to the Web UI
 
