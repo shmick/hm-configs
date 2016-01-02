@@ -5,16 +5,23 @@
 # crontab entry
 #*/10 * * * *  /mnt/mmcblk0p4/net-watchdog.sh
 
-test_host=$(netstat -nr | grep "UG" | awk '{print $2}' | xargs ping -q -w 1 -c 1 | grep "received" | awk '{print $4}')
-if [ "$test_host" == "0" ] || [ -z "$test_host" ] ;
+LOG=/mnt/mmcblk0p4/net-watchdog.log
+
+checkgw () {
+ping_gw=$(netstat -nr | grep "UG" | awk '{print $2}' | xargs ping -q -w 1 -c 1 | grep "1 packets received")
+result=$?
+}
+
+checkgw
+if  [ "$result" -ge 1 ]
 then
-logger -p user.alert "Restarting network"
+echo "$(date "+%Y-%m-%d %H:%M:%S") : Restarting network" >> $LOG
 /etc/init.d/network reload
 sleep 120
-test_host=$(netstat -nr | grep "UG" | awk '{print $2}' | xargs ping -q -w 1 -c 1 | grep "received" | awk '{print $4}')
-	if [ "$test_host" == "0" ] || [ -z "$test_host" ] ;
-	then
-	logger -p user.alert "Rebooting"
-	/sbin/reboot
-	fi
+checkgw
+    if [ "$result" -ge 1 ]
+    then
+    echo "$(date "+%Y-%m-%d %H:%M:%S") : Rebooting" >> $LOG
+    /sbin/reboot
+    fi
 fi
