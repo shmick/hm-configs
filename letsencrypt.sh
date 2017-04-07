@@ -33,5 +33,8 @@ $ACMEBIN --tls "$MODE" \
 --pre-hook "/etc/init.d/uhttpd stop" \
 -d "$HOST"                                                 
                                                            
-# Regardless if the cert was generated or not, start uhttpd
+CMD=$(pgrep uhttpd)
+STATUS="$?"
+if [ "$STATUS" != "0" ] ; then
 $UHTTPD start
+fi
