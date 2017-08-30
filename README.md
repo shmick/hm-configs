@@ -21,3 +21,5 @@
 # Additional Info
 #### You can purchase a HeaterMeter Kit from the [HeaterMeter Store](http://store.heatermeter.com/collections/all)
 #### For additional questions and/or support, vist the [HeaterMeter Forum](http://tvwbb.com/forumdisplay.php?85-LinkMeter-v2-Homebrew-BBQ-Controller)
+
+Tip Jar: BTC 1BFSzGSSU5LazfYv8rYYxzT3M3GRf9EPov
