@@ -16,7 +16,7 @@ checkgw
 if  [ "$result" -ge 1 ]
 then
 echo "$(date "+%Y-%m-%d %H:%M:%S") : Restarting network" >> $LOG
-/etc/init.d/network reload
+/etc/init.d/network restart
 sleep 120
 checkgw
     if [ "$result" -ge 1 ]
